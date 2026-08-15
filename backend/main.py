@@ -11,6 +11,8 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
 import numpy as np
+import pandas as pd
+from pathlib import Path
 
 #
 ...
@@ -34,11 +36,13 @@ app = FastAPI(
 ...
 
 # Load the trained Random Forest model and the fitted StandardScaler
-# into memory.
+# from disk into memory.
 
-model = joblib.load("../models/random_forest_model.pkl")
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-scaler = joblib.load("../models/scaler.pkl")
+model = joblib.load(BASE_DIR / "models" / "random_forest_model.pkl")
+
+scaler = joblib.load(BASE_DIR / "models" / "scaler.pkl")
 
 #
 ...
@@ -92,20 +96,21 @@ def home():
 
 @app.post("/predict")
 def predict(data: WineInput):
-    input_data = np.array([[
-        data.fixed_acidity,
-        data.volatile_acidity,
-        data.citric_acid,
-        data.residual_sugar,
-        data.chlorides,
-        data.free_sulfur_dioxide,
-        data.total_sulfur_dioxide,
-        data.density,
-        data.pH,
-        data.sulphates,
-        data.alcohol,
-        data.wine_type
-    ]])
+    input_data = pd.DataFrame([{
+    "fixed acidity": data.fixed_acidity,
+    "volatile acidity": data.volatile_acidity,
+    "citric acid": data.citric_acid,
+    "residual sugar": data.residual_sugar,
+    "chlorides": data.chlorides,
+    "free sulfur dioxide": data.free_sulfur_dioxide,
+    "total sulfur dioxide": data.total_sulfur_dioxide,
+    "density": data.density,
+    "pH": data.pH,
+    "sulphates": data.sulphates,
+    "alcohol": data.alcohol,
+    "wine_type": data.wine_type
+}])
+    
     # Standardize the the input features using the saved scaler.
     
     scaled_data = scaler.transform(input_data)
