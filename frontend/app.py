@@ -125,7 +125,7 @@ if predict_button:
     try:
         # Send the input data to the FastAPI backend.
         response = requests.post(
-            "http://127.0.0.1:8000/predict",
+            "https://wine-quality-prediction-j49j.onrender.com/predict",
             json=input_data
         )
         # Check if the request was successful.
