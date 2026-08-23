@@ -125,7 +125,7 @@ if predict_button:
     try:
         # Send the input data to the FastAPI backend.
         response = requests.post(
-            "https://wine-quality-prediction-j49j.onrender.com/predict",
+            "https://wine-quality-prediction-backend.onrender.com/predict",
             json=input_data
         )
         # Check if the request was successful.
@@ -136,5 +136,9 @@ if predict_button:
                 f"Predicted Wine Quality: {prediction['Predicted Wine Quality']}"
             )
         else:
-            st.error("Prediction failed. Please check the API.")
+            st.error(
+                f"Prediction failed. \n\n"
+                f"Status Code: {response.status_code}\n\n"
+                f"Response: {response.text}"
+            )
     except Exception as e: st.error(f"Unable to connect to the backend.\n\n{e}")
