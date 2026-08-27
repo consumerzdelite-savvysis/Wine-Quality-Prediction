@@ -54,6 +54,7 @@ The raw datasets are stored in:
 data/raw/
 ├── winequality-red.csv
 └── winequality-white.csv
+```
 
 An additional dataset file is stored under:
 
