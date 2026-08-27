@@ -409,14 +409,75 @@ reports/figures/
 
 ## Screenshots
 
-Screenshots demonstrating the following project components can be maintained in the project documentation: 
-•	Exploratory Data Analysis
-•	Correlation analysis
-•	Model evaluation
-•	FastAPI Swagger documentation
-•	Streamlit application
-•	Cloud deployment
-•	End-to-end prediction result
+The following screenshots provide visual evidence of the project's development, analytical workflow, model evaluation, API implementation, frontend interface, cloud deployment, and final prediction.
+
+### 1. Exploratory Data Analysis — Summary Statistics
+
+![EDA Overview](screenshots/01_eda_overview.png)
+
+The summary statistics provide an overview of the distribution and descriptive characteristics of the wine-quality dataset.
+
+### 2. Correlation Heatmap
+
+![Correlation Heatmap](screenshots/02_correlation_heatmap.png)
+
+The correlation analysis shows the relationships between the physicochemical properties and wine quality. Alcohol showed the strongest positive relationship with wine quality, while density showed a weak negative relationship.
+
+### 3. Model Comparison
+
+![Model Comparison](screenshots/03_model_comparison.png)
+
+This comparison presents the evaluation results of the machine learning models considered during the project.
+
+### 4. Final Model Ranking
+
+![Final Model Ranking](screenshots/04_final_model_ranking.png)
+
+The final model ranking provides a comparative view of model performance and supports the selection of the final prediction model.
+
+### 5. FastAPI Backend
+
+![FastAPI Backend](screenshots/05_fastapi_backend.png)
+
+The FastAPI backend provides the API service responsible for receiving wine-property inputs and returning predictions from the trained machine learning model.
+
+### 6. FastAPI Swagger Documentation
+
+![FastAPI Swagger](screenshots/06_fastapi_swagger.png)
+
+The Swagger interface provides interactive documentation and testing for the deployed FastAPI endpoints.
+
+### 7. FastAPI Prediction
+
+![FastAPI Prediction](screenshots/07_fastapi_prediction.png)
+
+The deployed API successfully processed a prediction request and returned a wine quality prediction.
+
+### 8. Streamlit Frontend
+
+![Streamlit Frontend](screenshots/08_streamlit_frontend.png)
+
+The Streamlit frontend provides a user-friendly interface for entering wine physicochemical properties and obtaining a predicted quality score.
+
+### 9. Render Backend Deployment
+
+![Render Backend](screenshots/09_render_backend.png)
+
+The FastAPI backend was successfully deployed as a live web service on Render.
+
+### 10. Render Frontend Deployment
+
+![Render Frontend](screenshots/10_render_frontend.png)
+
+The Streamlit frontend was successfully deployed as a live web service on Render.
+
+### 11. Final Prediction
+
+![Final Prediction](screenshots/11_final_prediction.png)
+
+The deployed application successfully returned:
+
+**Predicted Wine Quality: 6**
 
 ## Future Improvements
 
