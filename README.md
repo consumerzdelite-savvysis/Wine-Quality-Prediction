@@ -497,11 +497,12 @@ Potential future improvements include:
 ## Author
 
 **Name**: Segun Daramola
-**Cohort**: 3MTT/DSN/DeepTech/WesOnline Mentorship Cohort 3
-**Programme**: Data Science / AI and Machine Learning
+**Cohort**: Data Science / AI and Machine Learning Cohort 3
+**Programme**: 3MTT/DSN/DeepTech/WesOnline Mentorship
 ---
 
 ## Mentor / Training Credit
+
 **GworldSoft Solutions Limited / 3MTT (DSN/DeepTech_Ready/WesOnline)**
 ---
 
