@@ -343,6 +343,7 @@ Wine-Quality-Prediction/
 │   └── scaler.pkl
 │
 ├── notebooks/
+│   ├── Hyperparameter_Tuning.ipynb
 │   └── Wine_Quality_Prediction.ipynb
 │
 ├── reports/
@@ -533,8 +534,6 @@ The deployed application successfully returned:
 Potential future improvements include:
 
 •	Comparing additional machine learning algorithms
-•	Hyperparameter optimization
-•	Cross-validation
 •	More detailed model comparison
 •	Improved handling of wine-quality classes
 •	Explainable AI and advanced feature-importance analysis
