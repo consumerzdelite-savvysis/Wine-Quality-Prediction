@@ -31,17 +31,19 @@ def train_random_forest():
     ) = preprocess_wine_data()
 
     # Select the exact features used by the model
-    X_train_features = select_model_features(
-        X_train
-    )
-
-    X_test_features = select_model_features(
-        X_test
-    )
+    X_train_features = select_model_features(X_train)
+    X_test_features = select_model_features(X_test)
 
     # Confirm feature names and order
     validate_feature_order(X_train_features)
     validate_feature_order(X_test_features)
+
+    # Scale the exact feature matrix used by the model
+    from sklearn.preprocessing import StandardScaler
+
+    scaler = StandardScaler()
+    X_train_scaled = scaler.fit_transform(X_train_features)
+    X_test_scaled = scaler.transform(X_test_features)
 
     # Train the final Random Forest model
     random_forest = RandomForestClassifier(

@@ -76,15 +76,20 @@ def prepare_features_and_target(wine_clean):
 
 def split_data(X, y, test_size=0.20, random_state=42):
     """
-    Split the dataset into training and testing sets.
+    Split the dataset into training and testing sets using the
+    same 80/20 methodology established in the model-development
+    notebook.
+
+    The split is intentionally kept without stratification so that
+    the reusable src pipeline reproduces the project's documented
+    Random Forest evaluation and model-selection results.
     """
 
     X_train, X_test, y_train, y_test = train_test_split(
         X,
         y,
         test_size=test_size,
-        random_state=random_state,
-        stratify=y
+        random_state=random_state
     )
 
     return X_train, X_test, y_train, y_test
